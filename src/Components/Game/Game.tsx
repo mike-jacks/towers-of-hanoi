@@ -1,6 +1,5 @@
-import { DndContext, DragOverlay } from "@dnd-kit/core";
+import { DndContext } from "@dnd-kit/core";
 import { useEffect, useState } from "react";
-import Disk from "../Disk/Disk";
 import { bottomBunImage, cheeseImage, DiskImage, lettuceImage, meatImage, onionsImage, picklesImage, topBunImage } from "../images";
 import Tower from "../Tower/Tower";
 import styles from "./Game.module.css";
@@ -13,7 +12,6 @@ export default function Game() {
   ]);
   const [selectedTower, setSelectedTower] = useState<number | null>(null);
   const [moveToTower, setMoveToTower] = useState<number | null>(null);
-  const [draggingDisk, setDraggingDisk] = useState<DiskImage | null>(null);
 
   useEffect(() => {
     if (moveToTower === null) {
@@ -37,15 +35,6 @@ export default function Game() {
       }
     });
   }, [moveToTower, selectedTower]);
-
-  function handleDragStart(event: any) {
-    const { active } = event;
-    const towerIndex = towers.findIndex((tower) => tower.some((disk) => disk.name === active.id));
-    if (towerIndex !== -1) {
-      const disk = towers[towerIndex].find((disk) => disk.name === active.name);
-      setDraggingDisk(disk || null);
-    }
-  }
 
   function handleDragEnd(event: any) {
     const { active, over } = event;
@@ -71,11 +60,10 @@ export default function Game() {
         });
       }
     }
-    setDraggingDisk(null);
   }
 
   return (
-    <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+    <DndContext onDragEnd={handleDragEnd}>
       <p>Game</p>
       <div className={styles.container}>
         {Array.from({ length: 3 }).map((_, index) => (
@@ -89,16 +77,6 @@ export default function Game() {
           />
         ))}
       </div>
-      <DragOverlay>
-        {draggingDisk ? (
-          <Disk
-            imageSource={draggingDisk.source}
-            imageAltName={draggingDisk.name}
-            className={`${styles[`disk-${draggingDisk.value}`]} ${styles.disk} ${styles.selected}`}
-            isDragging={true} // Pass the dragging state to the Disk component
-          />
-        ) : null}
-      </DragOverlay>
     </DndContext>
   );
 }

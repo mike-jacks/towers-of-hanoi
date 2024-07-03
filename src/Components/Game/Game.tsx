@@ -11,12 +11,7 @@ export default function Game() {
   ]);
   const [selectedTower, setSelectedTower] = useState<number | null>(null);
   const [moveToTower, setMoveToTower] = useState<number | null>(null);
-
-  // useEffect(() => {
-  // if (selectedTower === null) {
-  //     return;
-  // }
-  // }, [selectedTower]);
+  useEffect(() => {}, [selectedTower]);
 
   useEffect(() => {
     if (moveToTower === null) {

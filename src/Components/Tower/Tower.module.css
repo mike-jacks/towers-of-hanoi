@@ -8,6 +8,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  justify-items: flex-end;
 }
 
 .burger_container {
@@ -15,50 +18,43 @@
   flex-direction: column-reverse;
   position: relative;
   width: 100%;
-  justify-content: flex-end;
+  height: 800px;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .disk {
-  position: absolute;
-  width: 300px;
+  width: 200px;
 }
 
 .disk-1 {
-  top: 0px;
   z-index: 7;
 }
 
 .disk-2 {
-  top: 40px;
   z-index: 6;
 }
 
 .disk-3 {
-  top: 30px;
   z-index: 5;
 }
 
 .disk-4 {
-  top: 110px;
   z-index: 4;
 }
 
 .disk-5 {
-  top: 120px;
   z-index: 3;
 }
 
 .disk-6 {
-  top: 130px;
   z-index: 2;
 }
 
 .disk-7 {
-  top: 170px;
   z-index: 1;
 }
 
 .disk-8 {
-  top: 200px;
   z-index: 0;
 }

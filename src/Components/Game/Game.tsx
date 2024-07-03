@@ -11,7 +11,6 @@ export default function Game() {
   ]);
   const [selectedTower, setSelectedTower] = useState<number | null>(null);
   const [moveToTower, setMoveToTower] = useState<number | null>(null);
-  useEffect(() => {}, [selectedTower]);
 
   useEffect(() => {
     if (moveToTower === null) {

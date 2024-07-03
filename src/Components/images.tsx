@@ -17,37 +17,37 @@ export const picklesImage: DiskImage = {
 };
 
 export const onionsImage: DiskImage = {
-  source: "/public/assets/images/3_Onions.svg",
+  source: "/assets/images/3_Onions.svg",
   name: "Onions",
   value: 3,
 };
 
 export const cheeseImage: DiskImage = {
-  source: "/public/assets/images/4_Cheese.svg",
+  source: "/assets/images/4_Cheese.svg",
   name: "Cheese",
   value: 4,
 };
 
 export const lettuceImage: DiskImage = {
-  source: "/public/assets/images/5_lettuce.svg",
+  source: "/assets/images/5_lettuce.svg",
   name: "Lettuce",
   value: 5,
 };
 
 export const meatImage: DiskImage = {
-  source: "/public/assets/images/6_Meat.svg",
+  source: "/assets/images/6_Meat.svg",
   name: "Meat",
   value: 6,
 };
 
 export const bottomBunImage: DiskImage = {
-  source: "/public/assets/images/7_BottomBun.svg",
+  source: "/assets/images/7_BottomBun.svg",
   name: "Bottom Bun",
   value: 7,
 };
 
 export const plateImage: DiskImage = {
-  source: "/public/assets/images/8_DinnerPlate.svg",
+  source: "/assets/images/8_DinnerPlate.svg",
   name: "Plate",
   value: 8,
 };

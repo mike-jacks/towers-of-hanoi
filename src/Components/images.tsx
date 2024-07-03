@@ -27,9 +27,8 @@ export const cheeseImage: DiskImage = {
   name: "Cheese",
   value: 4,
 };
-
 export const lettuceImage: DiskImage = {
-  source: "/assets/images/5_lettuce.svg",
+  source: "/assets/images/5_Lettuce.svg",
   name: "Lettuce",
   value: 5,
 };

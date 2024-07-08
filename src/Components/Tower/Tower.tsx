@@ -24,12 +24,16 @@ export default function Tower({ towerNumber, towers, selectedTower, setSelectedT
   }
 
   const currentTower = towers[towerNumber - 1];
-  const isSelectedTower = selectedTower == towerNumber;
 
   return (
     <Droppable id={String(towerNumber)}>
       <div className={styles.burger_container} onClick={selectedTower ? handleSetMoveToTower : handleSetSelectedTower}>
-        <Disk imageSource={plateImage.source} imageAltName={plateImage.name} className={`${styles[`disk-${plateImage.value}`]} ${styles.disk}`} />
+        <Disk
+          imageSource={plateImage.source}
+          imageAltName={plateImage.name}
+          className={`${styles[`disk-${plateImage.value}`]} ${styles.disk}`}
+          isDraggable={false}
+        />
         {currentTower.map((disk, index) => {
           return (
             <Disk
@@ -37,7 +41,6 @@ export default function Tower({ towerNumber, towers, selectedTower, setSelectedT
               imageSource={disk.source}
               imageAltName={disk.name}
               className={`${styles[`disk-${disk.value}`]} ${styles.disk}`}
-              selected={isSelectedTower && index === currentTower.length - 1}
               isDraggable={index === currentTower.length - 1 && disk.name !== plateImage.name} // Only the top disk is draggable
             />
           );

@@ -21,6 +21,8 @@ export default function Game() {
           setTimeout(resolve, 2000);
         });
         alert(`Congratulations!\nYou Won completing it in ${gameCounter} moves!!!`);
+        setGameCounter(0);
+        setTowers([[bottomBunImage, meatImage, lettuceImage, cheeseImage, onionsImage, picklesImage, topBunImage], [], []]);
       } else {
         setCollapse(false);
       }

@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import Disk from "../Disk/Disk";
 import Droppable from "../Droppable/Droppable";
 import { DiskImage, plateImage } from "../images";
@@ -7,40 +6,29 @@ import styles from "./Tower.module.css";
 export type TowerProps = {
   towerNumber: number;
   towers: DiskImage[][];
-  selectedTower: number | null;
-  setSelectedTower: Dispatch<SetStateAction<number | null>>;
-  setMoveToTower: Dispatch<SetStateAction<number | null>>;
+  collapse: boolean;
 };
 
-export default function Tower({ towerNumber, towers, selectedTower, setSelectedTower, setMoveToTower }: TowerProps) {
-  function handleSetSelectedTower() {
-    console.log("set selected tower: ", towerNumber);
-    setSelectedTower(towerNumber);
-  }
-
-  function handleSetMoveToTower() {
-    console.log("set move to tower: ", towerNumber);
-    setMoveToTower(towerNumber);
-  }
-
+export default function Tower({ towerNumber, towers, collapse }: TowerProps) {
   const currentTower = towers[towerNumber - 1];
 
   return (
     <Droppable id={String(towerNumber)}>
-      <div className={styles.burger_container} onClick={selectedTower ? handleSetMoveToTower : handleSetSelectedTower}>
+      <div className={styles.burger_container}>
         <Disk
           imageSource={plateImage.source}
           imageAltName={plateImage.name}
-          className={`${styles[`disk-${plateImage.value}`]} ${styles.disk}`}
+          className={`${styles[`disk-${0}`]} ${styles.disk}`}
           isDraggable={false}
         />
         {currentTower.map((disk, index) => {
+          const className = collapse ? `${styles[`disk-${index + 1}-win`]} ${styles.disk}` : `${styles[`disk-${index + 1}`]} ${styles.disk}`;
           return (
             <Disk
               key={index}
               imageSource={disk.source}
               imageAltName={disk.name}
-              className={`${styles[`disk-${disk.value}`]} ${styles.disk}`}
+              className={className}
               isDraggable={index === currentTower.length - 1 && disk.name !== plateImage.name} // Only the top disk is draggable
             />
           );

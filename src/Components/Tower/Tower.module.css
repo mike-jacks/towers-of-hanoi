@@ -26,34 +26,83 @@
   width: 200px;
 }
 
+.disk-0 {
+  z-index: 0;
+}
+
 .disk-1 {
-  z-index: 7;
+  z-index: 1;
+  transition: all 2s ease-in-out;
 }
 
 .disk-2 {
-  z-index: 6;
+  z-index: 2;
+  transition: all 2s ease-in-out;
 }
 
 .disk-3 {
-  z-index: 5;
+  z-index: 3;
+  transition: all 2s ease-in-out;
 }
 
 .disk-4 {
   z-index: 4;
+  transition: all 2s ease-in-out;
 }
 
 .disk-5 {
-  z-index: 3;
+  z-index: 5;
+  transition: all 2s ease-in-out;
 }
 
 .disk-6 {
-  z-index: 2;
+  z-index: 6;
+  transition: all 2s ease-in-out;
 }
 
 .disk-7 {
-  z-index: 1;
+  z-index: 7;
+  transition: all 2s ease-in-out;
 }
 
-.disk-8 {
-  z-index: 0;
+.disk-1-win {
+  z-index: 1;
+  transform: translateY(70px);
+  transition: all 2s ease-in-out;
+}
+
+.disk-2-win {
+  z-index: 2;
+  transform: translateY(130px);
+  transition: all 2s ease-in-out;
+}
+
+.disk-3-win {
+  z-index: 3;
+  transform: translateY(210px);
+  transition: all 2s ease-in-out;
+}
+
+.disk-4-win {
+  z-index: 4;
+  transform: translateY(310px);
+  transition: all 2s ease-in-out;
+}
+
+.disk-5-win {
+  z-index: 5;
+  transform: translateY(400px);
+  transition: all 2s ease-in-out;
+}
+
+.disk-6-win {
+  z-index: 6;
+  transform: translateY(515px);
+  transition: all 2s ease-in-out;
+}
+
+.disk-7-win {
+  z-index: 7;
+  transform: translateY(611px);
+  transition: all 2s ease-in-out;
 }
